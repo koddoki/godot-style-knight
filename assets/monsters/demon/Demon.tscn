@@ -1,0 +1,75 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/monsters/demon/Demon.gd" type="Script" id=1]
+[ext_resource path="res://assets/monsters/demon/big_demon_run_anim_f3.png" type="Texture" id=2]
+[ext_resource path="res://assets/monsters/demon/big_demon_run_anim_f1.png" type="Texture" id=3]
+[ext_resource path="res://assets/monsters/demon/big_demon_idle_anim_f2.png" type="Texture" id=4]
+[ext_resource path="res://assets/monsters/demon/big_demon_idle_anim_f0.png" type="Texture" id=5]
+[ext_resource path="res://assets/monsters/demon/big_demon_run_anim_f2.png" type="Texture" id=6]
+[ext_resource path="res://assets/monsters/demon/big_demon_idle_anim_f3.png" type="Texture" id=7]
+[ext_resource path="res://assets/monsters/demon/big_demon_run_anim_f0.png" type="Texture" id=8]
+[ext_resource path="res://assets/monsters/demon/big_demon_idle_anim_f1.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/premadeFonts/classLabel.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/monsters/demon/DemonSprites.gd" type="Script" id=11]
+[ext_resource path="res://assets/monsters/demon/AreaDaMorte.gd" type="Script" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 44 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 38 )
+
+[node name="Moidy" type="KinematicBody2D"]
+position = Vector2( 488, 256 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 12 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 2 )
+animation = "run"
+frame = 6
+playing = true
+script = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -32.0
+margin_top = -80.0
+margin_right = 47.0
+margin_bottom = -63.0
+custom_fonts/font = ExtResource( 10 )
+text = ".moidy{ }"
+
+[node name="AreaDaMorte" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32801
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDaMorte"]
+position = Vector2( 0, 6 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.4
+one_shot = true
+
+[connection signal="body_entered" from="AreaDaMorte" to="AreaDaMorte" method="_on_AreaDaMorte_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

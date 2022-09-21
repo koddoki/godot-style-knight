@@ -1,0 +1,77 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://player/sprites/knight_m_idle_anim_f2.png" type="Texture" id=1]
+[ext_resource path="res://player/scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/premadeFonts/classLabel.tres" type="DynamicFont" id=3]
+[ext_resource path="res://player/sprites/knight_m_idle_anim_f0.png" type="Texture" id=4]
+[ext_resource path="res://player/sprites/knight_m_idle_anim_f1.png" type="Texture" id=5]
+[ext_resource path="res://player/sprites/knight_m_run_anim_f2.png" type="Texture" id=6]
+[ext_resource path="res://player/sprites/knight_m_run_anim_f0.png" type="Texture" id=7]
+[ext_resource path="res://player/sprites/knight_m_run_anim_f1.png" type="Texture" id=8]
+[ext_resource path="res://player/sprites/knight_m_run_anim_f3.png" type="Texture" id=9]
+[ext_resource path="res://player/sprites/knight_m_hit_anim_f0.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 22.625 )
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform vec4 color : hint_color;
+
+void fragment() {
+	vec4 pixelcolor = texture(TEXTURE, UV);
+	float brightness = (pixelcolor.r + pixelcolor.g + pixelcolor.b / 6.0);
+	vec4 grayScale = vec4(brightness, brightness, brightness, pixelcolor.a);
+	COLOR = grayScale * color;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = SubResource( 3 )
+shader_param/color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 327, 291 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 23.625 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -39.0
+margin_top = -35.0
+margin_right = 51.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 3 )
+text = ".player{ }"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 1, 5 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 2 )
+animation = "idle"
+playing = true

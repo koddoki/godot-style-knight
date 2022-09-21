@@ -1,0 +1,273 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/fonts/bruteFonts/EightBitDragon-anqx.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ux/botao_transparente.tres" type="StyleBox" id=2]
+[ext_resource path="res://ux/Niveis/Niveis.gd" type="Script" id=3]
+[ext_resource path="res://png-transparent-medieval-european-border-background-gradient-color-european-style-complicated.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 57
+outline_color = Color( 0.803922, 0.509804, 0.164706, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 31
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.85098, 0.54902, 0.231373, 0 )
+border_color = Color( 0, 0, 0, 1 )
+corner_detail = 6
+
+[sub_resource type="DynamicFont" id=4]
+size = 31
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.85098, 0.54902, 0.231373, 0 )
+border_color = Color( 0, 0, 0, 1 )
+corner_detail = 6
+
+[node name="Niveis" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1023.0
+margin_bottom = 599.0
+color = Color( 0.34902, 0.231373, 0.105882, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Png-transparent-medieval-european-border-background-gradient-color-european-style-complicated" type="Sprite" parent="."]
+position = Vector2( 509.992, 196.639 )
+scale = Vector2( 1.11304, 1.1583 )
+texture = ExtResource( 4 )
+offset = Vector2( 1.80392, 89.2353 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_top = 79.0
+margin_right = 511.0
+margin_bottom = 106.0
+rect_pivot_offset = Vector2( 552, 72 )
+custom_colors/font_color = Color( 0.321569, 0.172549, 0.0235294, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Niveis"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 640.0
+margin_top = 128.0
+margin_right = 896.0
+margin_bottom = 448.0
+
+[node name="Nivel5" type="Button" parent="VBoxContainer2"]
+margin_right = 256.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 5"
+
+[node name="Nivel6" type="Button" parent="VBoxContainer2"]
+margin_top = 81.0
+margin_right = 256.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 6"
+
+[node name="Nivel7" type="Button" parent="VBoxContainer2"]
+margin_top = 162.0
+margin_right = 256.0
+margin_bottom = 239.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 7"
+
+[node name="Nivel8" type="Button" parent="VBoxContainer2"]
+margin_top = 243.0
+margin_right = 256.0
+margin_bottom = 320.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 8"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -384.0
+margin_top = -172.0
+margin_right = -128.0
+margin_bottom = 148.0
+
+[node name="Nivel1" type="Button" parent="VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 1"
+
+[node name="Nivel2" type="Button" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 256.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 2"
+
+[node name="Nivel3" type="Button" parent="VBoxContainer"]
+margin_top = 162.0
+margin_right = 256.0
+margin_bottom = 239.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 3"
+
+[node name="Nivel4" type="Button" parent="VBoxContainer"]
+margin_top = 243.0
+margin_right = 256.0
+margin_bottom = 320.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Nivel 4"
+
+[node name="HomeButton" type="Button" parent="."]
+margin_top = 528.0
+margin_right = 1022.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = SubResource( 6 )
+text = "Voltar"
+
+[connection signal="pressed" from="VBoxContainer2/Nivel5" to="." method="_on_Nivel5_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Nivel6" to="." method="_on_Nivel6_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Nivel7" to="." method="_on_Nivel7_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Nivel8" to="." method="_on_Nivel8_pressed"]
+[connection signal="pressed" from="VBoxContainer/Nivel1" to="." method="_on_Nivel1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Nivel2" to="." method="_on_Nivel2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Nivel3" to="." method="_on_Nivel3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Nivel4" to="." method="_on_Nivel4_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]

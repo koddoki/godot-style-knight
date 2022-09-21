@@ -1,0 +1,243 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/fonts/premadeFonts/rulesLabel.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/FlexBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/PressurePlate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/DivPressurePlate.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/level1/Node2D.gd" type="Script" id=8]
+[ext_resource path="res://assets/fonts/bruteFonts/EightBitDragon-anqx.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://ux/botao_transparente.tres" type="StyleBox" id=10]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/floor_ladder.png" type="Texture" id=11]
+[ext_resource path="res://assets/door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://png-transparent-medieval-european-border-background-gradient-color-european-style-complicated.png" type="Texture" id=13]
+[ext_resource path="res://assets/Exit.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/Console.tscn" type="PackedScene" id=16]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/doors_all.png" type="Texture" id=18]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 0, 0, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 1, 0, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="DynamicFont" id=12]
+size = 24
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.85098, 0.54902, 0.231373, 0 )
+border_color = Color( 0, 0, 0, 1 )
+corner_detail = 6
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -65.0
+margin_top = -36.0
+margin_right = 1468.0
+margin_bottom = 918.0
+rect_scale = Vector2( 0.671073, 0.633026 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Png-transparent-medieval-european-border-background-gradient-color-european-style-complicated" type="Sprite" parent="ColorRect"]
+position = Vector2( 1145.68, 711.871 )
+scale = Vector2( 2.48844, 2.74082 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DivPressurePlate" parent="." instance=ExtResource( 7 )]
+
+[node name="PressurePlate" parent="DivPressurePlate" instance=ExtResource( 5 )]
+position = Vector2( 760, 736 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="PressurePlate2" parent="DivPressurePlate" instance=ExtResource( 5 )]
+position = Vector2( 264, 736 )
+
+[node name="PressurePlate3" parent="DivPressurePlate" instance=ExtResource( 5 )]
+position = Vector2( 512, 736 )
+
+[node name="Div" parent="." instance=ExtResource( 2 )]
+position = Vector2( 665, 476 )
+
+[node name="Box" parent="Div" instance=ExtResource( 3 )]
+modulate = Color( 1, 0, 0, 1 )
+
+[node name="Box2" parent="Div" instance=ExtResource( 3 )]
+
+[node name="Box3" parent="Div" instance=ExtResource( 3 )]
+
+[node name="Wall" parent="." instance=ExtResource( 4 )]
+collision_layer = 512
+collision_mask = 519
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 196608, 0, 0, 196623, 0, 0, 262144, 0, 0, 262159, 0, 0, 327680, 0, 0, 327695, 0, 0, 393216, 0, 0, 393231, 0, 0, 458752, 0, 0, 458767, 0, 0, 524288, 0, 0, 524303, 0, 0, 589824, 0, 0, 589839, 0, 0, 655360, 0, 0, 655375, 0, 0, 720896, 0, 0, 720911, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 704, 416 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="Dica" type="PanelContainer" parent="."]
+margin_left = 1064.0
+margin_top = 464.0
+margin_right = 1432.0
+margin_bottom = 824.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Dica"]
+margin_right = 368.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 350, 300 )
+
+[node name="ColorRect" type="ColorRect" parent="Dica/MarginContainer"]
+margin_right = 368.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 176, 288 )
+color = Color( 0.72549, 0.580392, 0.360784, 1 )
+
+[node name="LabelExit2" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 208.0
+margin_top = 292.0
+margin_right = 290.0
+margin_bottom = 345.0
+custom_fonts/font = ExtResource( 1 )
+text = "ABRE
+FECHA"
+valign = 1
+
+[node name="Heart" type="Sprite" parent="Dica/MarginContainer/ColorRect/LabelExit2"]
+position = Vector2( -120, 24 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+
+[node name="Red" type="Panel" parent="Dica/MarginContainer/ColorRect/LabelExit2"]
+margin_left = -40.0
+margin_top = 24.0
+margin_right = -8.0
+margin_bottom = 55.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="Rules" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_right = 368.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 6 )
+text = "LEVEL RULES"
+align = 1
+valign = 1
+
+[node name="LabelExit" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 96.0
+margin_top = 80.0
+margin_right = 355.0
+margin_bottom = 133.0
+custom_fonts/font = ExtResource( 1 )
+text = "TOQUE PARA VENCER"
+align = 1
+valign = 1
+
+[node name="Exit" type="Sprite" parent="Dica/MarginContainer/ColorRect/LabelExit"]
+position = Vector2( -40, 24 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+
+[node name="LabelExit4" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 31.0
+margin_top = 222.0
+margin_right = 113.0
+margin_bottom = 248.0
+custom_fonts/font = ExtResource( 1 )
+text = ".box{}"
+valign = 1
+
+[node name="LabelExit3" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 26.0
+margin_top = 157.0
+margin_right = 286.0
+margin_bottom = 222.0
+custom_fonts/font = ExtResource( 1 )
+text = "USE FLEXBOX PARA
+ABRIR A PORTA"
+valign = 1
+
+[node name="DesclicaConsole" type="Button" parent="."]
+margin_right = 1024.0
+margin_bottom = 824.0
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 10 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Green" type="Panel" parent="."]
+margin_left = 1232.0
+margin_top = 748.0
+margin_right = 1264.0
+margin_bottom = 780.0
+custom_styles/panel = SubResource( 10 )
+
+[node name="Exit" parent="." instance=ExtResource( 14 )]
+position = Vector2( 480, 96 )
+collision_layer = 0
+
+[node name="door" parent="." instance=ExtResource( 12 )]
+position = Vector2( 448, 128 )
+
+[node name="player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 384, 433 )
+collision_layer = 32769
+
+[node name="Console" parent="." instance=ExtResource( 16 )]
+
+[node name="HomeButton" type="Button" parent="."]
+margin_left = 1067.0
+margin_top = 830.0
+margin_right = 1430.0
+margin_bottom = 862.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 10 )
+custom_styles/normal = SubResource( 13 )
+text = "Voltar"
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_Exit_body_entered"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]

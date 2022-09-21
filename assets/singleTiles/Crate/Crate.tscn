@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/premadeFonts/classLabel.tres" type="DynamicFont" id=1]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/crate.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56, 40.5 )
+
+[node name="Crate" type="StaticBody2D"]
+collision_layer = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 8, 4 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -40.0
+margin_top = -64.0
+margin_right = 45.0
+margin_bottom = -39.0
+custom_fonts/font = ExtResource( 1 )
+text = ".crate{ }"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.5 )
+shape = SubResource( 1 )

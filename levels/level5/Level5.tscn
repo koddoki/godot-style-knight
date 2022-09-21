@@ -1,0 +1,241 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://levels/level1/Node2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/singleTiles/Mureta.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/monsters/demon/Demon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ux/botao_transparente.tres" type="StyleBox" id=7]
+[ext_resource path="res://assets/fonts/bruteFonts/EightBitDragon-anqx.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/goblin_idle_anim_f1.png" type="Texture" id=9]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/floor_ladder.png" type="Texture" id=10]
+[ext_resource path="res://png-transparent-medieval-european-border-background-gradient-color-european-style-complicated.png" type="Texture" id=11]
+[ext_resource path="res://assets/monsters/goblin/Goblin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/fonts/premadeFonts/rulesLabel.tres" type="DynamicFont" id=14]
+[ext_resource path="res://assets/tilesets/premadeTilesets/BasicTiles.tres" type="TileSet" id=15]
+[ext_resource path="res://assets/tilesets/premadeTilesets/NoCollisionTiles.tres" type="TileSet" id=16]
+[ext_resource path="res://assets/Console.tscn" type="PackedScene" id=17]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.85098, 0.54902, 0.231373, 0 )
+border_color = Color( 0, 0, 0, 1 )
+corner_detail = 6
+
+[node name="Level4" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -63.0
+margin_top = -34.0
+margin_right = 1473.0
+margin_bottom = 864.0
+
+[node name="Png-transparent-medieval-european-border-background-gradient-color-european-style-complicated" type="Sprite" parent="ColorRect"]
+position = Vector2( 768, 450 )
+scale = Vector2( 1.66522, 1.72973 )
+texture = ExtResource( 11 )
+
+[node name="floor" type="TileMap" parent="."]
+modulate = Color( 0.109804, 0.486275, 0.282353, 1 )
+position = Vector2( 1, 0 )
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+format = 1
+tile_data = PoolIntArray( 0, 14, 0, 1, 14, 0, 2, 14, 0, 3, 14, 0, 4, 14, 0, 5, 14, 0, 6, 14, 0, 7, 14, 0, 8, 14, 0, 9, 14, 0, 10, 14, 0, 11, 14, 0, 12, 14, 0, 13, 14, 0, 14, 14, 0, 15, 14, 0, 19, 0, 0, 65536, 14, 0, 65537, 14, 0, 65538, 14, 0, 65539, 14, 0, 65540, 14, 0, 65541, 14, 0, 65542, 14, 0, 65543, 14, 0, 65544, 14, 0, 65545, 14, 0, 65546, 14, 0, 65547, 14, 0, 65548, 14, 0, 65549, 14, 0, 65550, 14, 0, 65551, 14, 0, 131072, 14, 0, 131073, 14, 0, 131074, 14, 0, 131075, 14, 0, 131076, 14, 0, 131077, 14, 0, 131078, 14, 0, 131079, 14, 0, 131080, 14, 0, 131081, 14, 0, 131082, 14, 0, 131083, 14, 0, 131084, 14, 0, 131085, 14, 0, 131086, 14, 0, 131087, 14, 0, 196608, 14, 0, 196609, 14, 0, 196610, 14, 0, 196611, 14, 0, 196612, 14, 0, 196613, 14, 0, 196614, 14, 0, 196615, 14, 0, 196616, 14, 0, 196617, 14, 0, 196618, 14, 0, 196619, 14, 0, 196620, 14, 0, 196621, 14, 0, 196622, 14, 0, 196623, 14, 0, 196627, 0, 0, 262144, 14, 0, 262145, 14, 0, 262146, 14, 0, 262147, 14, 0, 262148, 14, 0, 262149, 14, 0, 262150, 14, 0, 262151, 14, 0, 262152, 14, 0, 262153, 14, 0, 262154, 14, 0, 262155, 14, 0, 262156, 14, 0, 262157, 14, 0, 262158, 14, 0, 262159, 14, 0, 327680, 14, 0, 327681, 14, 0, 327682, 14, 0, 327683, 14, 65537, 327684, 14, 65537, 327685, 14, 0, 327686, 14, 0, 327687, 14, 0, 327688, 14, 0, 327689, 14, 0, 327690, 14, 0, 327691, 14, 0, 327692, 14, 0, 327693, 14, 0, 327694, 14, 0, 327695, 14, 0, 393216, 14, 0, 393217, 14, 0, 393218, 14, 0, 393219, 14, 1, 393220, 14, 65537, 393221, 14, 0, 393222, 14, 0, 393223, 14, 0, 393224, 14, 0, 393225, 14, 0, 393226, 14, 0, 393227, 14, 0, 393228, 14, 0, 393229, 14, 0, 393230, 14, 0, 393231, 14, 0, 458752, 14, 0, 458753, 14, 0, 458754, 14, 65536, 458755, 14, 0, 458756, 14, 0, 458757, 14, 0, 458758, 14, 0, 458759, 14, 131072, 458760, 14, 131073, 458761, 14, 0, 458762, 14, 0, 458763, 14, 0, 458764, 14, 0, 458765, 14, 0, 458766, 14, 0, 458767, 14, 0, 524288, 14, 0, 524289, 14, 0, 524290, 14, 0, 524291, 14, 0, 524292, 14, 1, 524293, 14, 2, 524294, 14, 65538, 524295, 14, 65536, 524296, 14, 0, 524297, 14, 0, 524298, 14, 0, 524299, 14, 0, 524300, 14, 0, 524301, 14, 0, 524302, 14, 0, 524303, 14, 0, 589824, 14, 0, 589825, 14, 0, 589826, 14, 0, 589827, 14, 0, 589828, 14, 0, 589829, 14, 0, 589830, 14, 0, 589831, 14, 0, 589832, 14, 0, 589833, 14, 0, 589834, 14, 0, 589835, 14, 0, 589836, 14, 0, 589837, 14, 0, 589838, 14, 0, 589839, 14, 0, 655360, 14, 0, 655361, 14, 0, 655362, 14, 0, 655363, 14, 0, 655364, 14, 0, 655365, 14, 0, 655366, 14, 0, 655367, 14, 0, 655368, 14, 0, 655369, 14, 0, 655370, 14, 0, 655371, 14, 0, 655372, 14, 0, 655373, 14, 0, 655374, 14, 0, 655375, 14, 0, 720896, 14, 0, 720897, 14, 0, 720898, 14, 0, 720899, 14, 0, 720900, 14, 0, 720901, 14, 0, 720902, 14, 0, 720903, 14, 0, 720904, 14, 0, 720905, 14, 0, 720906, 14, 0, 720907, 14, 0, 720908, 14, 0, 720909, 14, 0, 720910, 14, 0, 720911, 14, 0, 786432, 14, 0, 786433, 14, 0, 786434, 14, 0, 786435, 14, 0, 786436, 14, 0, 786437, 14, 0, 786438, 14, 0, 786439, 14, 0, 786440, 14, 0, 786441, 14, 0, 786442, 14, 0, 786443, 14, 0, 786444, 14, 0, 786445, 14, 0, 786446, 14, 0, 786447, 14, 0 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.027451, 0.141176, 0.0666667, 1 )
+tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 196609, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262145, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327681, 0, 0, 327684, 0, 0, 327685, 0, 0, 327689, 0, 0, 327690, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393216, 0, 0, 393217, 0, 0, 393220, 0, 0, 393221, 0, 0, 393225, 0, 0, 393226, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589838, 0, 0, 589839, 0, 0, 655360, 0, 0, 655374, 0, 0, 655375, 0, 0, 720896, 0, 0, 720897, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0 )
+
+[node name="WallNoCollision" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 704, 416 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="Dica" type="PanelContainer" parent="."]
+margin_left = 1064.0
+margin_top = 464.0
+margin_right = 1432.0
+margin_bottom = 824.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Dica"]
+margin_right = 368.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 350, 300 )
+
+[node name="ColorRect" type="ColorRect" parent="Dica/MarginContainer"]
+margin_right = 368.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 176, 288 )
+color = Color( 0.72549, 0.580392, 0.360784, 1 )
+
+[node name="Rules" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_right = 368.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 6 )
+text = "LEVEL RULES"
+align = 1
+valign = 1
+
+[node name="LabelExit" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 96.0
+margin_top = 80.0
+margin_right = 355.0
+margin_bottom = 133.0
+custom_fonts/font = ExtResource( 14 )
+text = "PENSE FORA DA CAIXA"
+align = 1
+valign = 1
+
+[node name="LabelHeart" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 64.0
+margin_top = 216.0
+margin_right = 370.0
+margin_bottom = 269.0
+custom_fonts/font = ExtResource( 14 )
+text = "INCOMODA MUITA 
+GENTE"
+align = 1
+valign = 1
+
+[node name="Heart" type="Sprite" parent="Dica/MarginContainer/ColorRect/LabelHeart"]
+position = Vector2( -8, 24 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+
+[node name="DesclicaConsole" type="Button" parent="."]
+margin_right = 1024.0
+margin_bottom = 824.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Muretas" type="Node" parent="."]
+
+[node name="Mureta" parent="Muretas" instance=ExtResource( 4 )]
+position = Vector2( 256, 576 )
+corInicio = "green"
+
+[node name="Mureta4" parent="Muretas" instance=ExtResource( 4 )]
+position = Vector2( 448, 64 )
+corInicio = "green"
+
+[node name="Mureta2" parent="Muretas" instance=ExtResource( 4 )]
+position = Vector2( 958, 64 )
+corInicio = "yellow"
+
+[node name="Mureta3" parent="Muretas" instance=ExtResource( 4 )]
+position = Vector2( 639, 573 )
+corInicio = "red"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Moidy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1128, 1464 )
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1120, 584 )
+collision_layer = 0
+
+[node name="Sprite" type="Sprite" parent="Exit"]
+modulate = Color( 1, 1, 0, 1 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Goblins" type="Node2D" parent="."]
+
+[node name="Goblin" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 312, 184 )
+
+[node name="Goblin2" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 872, 688 )
+
+[node name="Goblin3" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 96, 680 )
+
+[node name="Goblin4" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 808, 496 )
+
+[node name="Goblin5" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 472, 688 )
+
+[node name="Goblin6" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 144, 280 )
+
+[node name="Goblin7" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 104, 168 )
+
+[node name="Goblin8" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 824, 264 )
+
+[node name="Goblin9" parent="Goblins" instance=ExtResource( 12 )]
+position = Vector2( 808, 56 )
+
+[node name="Console" parent="." instance=ExtResource( 17 )]
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 184, 368 )
+collision_layer = 32769
+
+[node name="HomeButton" type="Button" parent="."]
+margin_left = 1066.0
+margin_top = 825.0
+margin_right = 1427.0
+margin_bottom = 866.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = SubResource( 9 )
+text = "Voltar"
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_Exit_body_entered"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]

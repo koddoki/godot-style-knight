@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/premadeFonts/classLabel.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Console.gd" type="Script" id=2]
+
+[node name="Console" type="Panel"]
+margin_left = 1064.0
+margin_top = -8.0
+margin_right = 1432.0
+margin_bottom = 441.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 358.0
+margin_bottom = 439.0
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer"]
+margin_right = 348.0
+margin_bottom = 429.0
+custom_fonts/font = ExtResource( 1 )
+show_line_numbers = true
+wrap_enabled = true
+
+[connection signal="text_changed" from="MarginContainer/TextEdit" to="." method="_on_TextEdit_text_changed"]

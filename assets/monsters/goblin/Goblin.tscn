@@ -1,0 +1,156 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/goblin_idle_anim_f1.png" type="Texture" id=1]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/goblin_idle_anim_f2.png" type="Texture" id=2]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/goblin_idle_anim_f3.png" type="Texture" id=3]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/goblin_idle_anim_f0.png" type="Texture" id=4]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/weapon_anime_sword.png" type="Texture" id=5]
+[ext_resource path="res://assets/monsters/goblin/Goblin.gd" type="Script" id=6]
+[ext_resource path="res://assets/fonts/premadeFonts/classLabel.tres" type="DynamicFont" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11, 11 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 2, 8.5 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Fatia"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sword:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 95.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.7, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -32, -40 ), Vector2( -32, -40 ), Vector2( 48, 4 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.7, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "preCorte"
+}, {
+"args": [  ],
+"method": "parteQueDoi"
+}, {
+"args": [  ],
+"method": "posCorte"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sword:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -32, -40 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 108, 20 )
+
+[node name="Goblin" type="KinematicBody2D"]
+position = Vector2( 388, 212 )
+collision_layer = 32
+script = ExtResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4, -12 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, -1 )
+shape = SubResource( 2 )
+
+[node name="Sword" type="Sprite" parent="."]
+position = Vector2( -32, -40 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Corta" type="Area2D" parent="Sword"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/Corta"]
+position = Vector2( -1, -2.5 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fatia = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="AreaDaRaiva" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDaRaiva"]
+shape = SubResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -36.0
+margin_top = -40.0
+margin_right = 42.0
+margin_bottom = -23.0
+custom_fonts/font = ExtResource( 7 )
+text = ".goblin{}"
+
+[connection signal="body_entered" from="Sword/Corta" to="." method="_on_Corta_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="AreaDaRaiva" to="." method="_on_AreaDaRaiva_body_entered"]

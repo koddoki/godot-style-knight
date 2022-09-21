@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://magicWall/magicWallEffect.gdshader" type="Shader" id=1]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/doors_leaf_closed.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/heatAmplitude = 0.15
+shader_param/heatPeriod = 20.0
+shader_param/heatPhaseShift = 6.0
+shader_param/heatUpperLimit = 10.0
+shader_param/color = Color( 1, 1, 1, 1 )
+
+[node name="Sprite" type="Sprite"]
+material = SubResource( 2 )
+position = Vector2( -168, -168 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+offset = Vector2( 106.563, 71.432 )

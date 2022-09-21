@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://magicWall/Node2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/premadeFonts/classLabel.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/singleTiles/Mureta.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.5, 31.5 )
+
+[node name="mureta1por1" type="StaticBody2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." instance=ExtResource( 1 )]
+position = Vector2( -180, -110 )
+scale = Vector2( 2, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 32.5, 31.5 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -128.0
+margin_top = -32.0
+margin_right = 192.0
+margin_bottom = -7.0
+custom_fonts/font = ExtResource( 2 )
+text = ".magicwall{}"
+align = 1

@@ -1,0 +1,363 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/stylebox/tutorialbox.tres" type="StyleBox" id=1]
+[ext_resource path="res://ux/inlevel/Tutorial.gd" type="Script" id=2]
+[ext_resource path="res://assets/stylebox/tutoriallabel.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/premadeFonts/rulesLabel.tres" type="DynamicFont" id=4]
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cor" type="ColorRect" parent="."]
+margin_left = 50.0
+margin_top = 59.0
+margin_right = 980.0
+margin_bottom = 725.0
+color = Color( 0.811765, 0.737255, 0.156863, 0.388235 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Cor"]
+margin_left = -1.0
+margin_right = 929.0
+margin_bottom = 660.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Cor/HBoxContainer"]
+margin_right = 463.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Cor/HBoxContainer/HBoxContainer"]
+margin_right = 463.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 229.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel"]
+anchor_right = 1.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 4 )
+text = "Justify Content:"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 66.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_right = 229.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 61.0
+margin_right = 229.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-end: Items align to the right side of the container."
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 122.0
+margin_right = 229.0
+margin_bottom = 179.0
+custom_fonts/font = ExtResource( 3 )
+text = "center: Items align at the center of the container."
+align = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 183.0
+margin_right = 229.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-between: Items display with equal spacing between them."
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 244.0
+margin_right = 229.0
+margin_bottom = 301.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-around: Items display with equal spacing around them."
+align = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 305.0
+margin_right = 229.0
+margin_bottom = 362.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="Panel2" type="Panel" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer"]
+margin_left = 233.0
+margin_right = 463.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+anchor_right = 1.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 4 )
+text = "Justify Content:"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 66.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel2/VBoxContainer"]
+margin_right = 230.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 61.0
+margin_right = 230.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-end: Items align to the right side of the container."
+align = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 122.0
+margin_right = 230.0
+margin_bottom = 179.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-between: Items display with equal spacing between them."
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 183.0
+margin_right = 230.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-around: Items display with equal spacing around them."
+align = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="Cor/HBoxContainer/HBoxContainer/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 244.0
+margin_right = 230.0
+margin_bottom = 301.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Cor/HBoxContainer"]
+margin_left = 467.0
+margin_right = 930.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cor/HBoxContainer/HBoxContainer2"]
+margin_right = 463.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 463.0
+margin_bottom = 328.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel"]
+anchor_right = 1.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 4 )
+text = "Justify Content:"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 66.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel/VBoxContainer"]
+margin_right = 463.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 41.0
+margin_right = 463.0
+margin_bottom = 78.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-end: Items align to the right side of the container."
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 82.0
+margin_right = 463.0
+margin_bottom = 119.0
+custom_fonts/font = ExtResource( 3 )
+text = "center: Items align at the center of the container."
+align = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 123.0
+margin_right = 463.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-between: Items display with equal spacing between them."
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 164.0
+margin_right = 463.0
+margin_bottom = 201.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-around: Items display with equal spacing around them."
+align = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 205.0
+margin_right = 463.0
+margin_bottom = 242.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="Panel2" type="Panel" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 332.0
+margin_right = 463.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2"]
+anchor_right = 1.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 4 )
+text = "Justify Content:"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 66.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2/VBoxContainer"]
+margin_right = 463.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 41.0
+margin_right = 463.0
+margin_bottom = 78.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-end: Items align to the right side of the container."
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 82.0
+margin_right = 463.0
+margin_bottom = 119.0
+custom_fonts/font = ExtResource( 3 )
+text = "center: Items align at the center of the container."
+align = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 123.0
+margin_right = 463.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-between: Items display with equal spacing between them."
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 164.0
+margin_right = 463.0
+margin_bottom = 201.0
+custom_fonts/font = ExtResource( 3 )
+text = "space-around: Items display with equal spacing around them."
+align = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="Cor/HBoxContainer/HBoxContainer2/VBoxContainer/Panel2/VBoxContainer"]
+margin_top = 205.0
+margin_right = 463.0
+margin_bottom = 242.0
+custom_fonts/font = ExtResource( 3 )
+text = "flex-start: Items align to the left side of the container."
+align = 1
+autowrap = true
+
+[node name="Auto Destruição" type="Button" parent="."]
+margin_left = 349.0
+margin_top = 274.0
+margin_right = 612.0
+margin_bottom = 430.0
+text = "Destruir"
+
+[connection signal="pressed" from="Auto Destruição" to="." method="_on_Auto_Destruio_pressed"]

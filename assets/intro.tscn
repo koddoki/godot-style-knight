@@ -1,0 +1,381 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/intro/prisma.png" type="Texture" id=1]
+[ext_resource path="res://assets/intro/parte pequena.png" type="Texture" id=2]
+[ext_resource path="res://assets/intro/parte grande.png" type="Texture" id=3]
+[ext_resource path="res://assets/intro.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/fonts/Clarendon/Clarendon.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/fonts/Zrnic/zrnic rg.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/intro/logo t5n ps1.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/Roboto/ps_1.mp3" type="AudioStream" id=9]
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite/Prisma:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/PartePequena:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/ParteGrande:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/PartePequena2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/ParteGrande2:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("catolicaSc:custom_colors/font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.184314, 0.584314, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("PacfaseIII2022:custom_colors/font_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.184314, 0.584314, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("logoT5n:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "prisma"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite/PartePequena:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.7, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 509, 314 ), Vector2( 533, 315 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/ParteGrande:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.7, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 508, 314 ), Vector2( 528, 315 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/PartePequena2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.7, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 501, 315 ), Vector2( 478, 315 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/ParteGrande2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.7, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 504, 314 ), Vector2( 483, 314 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 8.5, 9.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 1.7, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("catolicaSc:custom_colors/font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2.7, 3.3, 8.1, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.184314, 0.584314, 0 ), Color( 0, 0.184314, 0.584314, 0 ), Color( 0, 0.184314, 0.584314, 1 ), Color( 0, 0.184314, 0.584314, 1 ), Color( 0, 0.184314, 0.584314, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("PacfaseIII2022:custom_colors/font_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2.7, 3.3, 8.1, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.184314, 0.584314, 0 ), Color( 0, 0.184314, 0.584314, 0 ), Color( 0, 0.184314, 0.584314, 1 ), Color( 0, 0.184314, 0.584314, 1 ), Color( 0, 0.184314, 0.584314, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("logoT5n:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 9, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Top5Nacional:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 9.8, 11.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("frase:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 9.5, 10.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "audio"
+tracks/11/path = NodePath("AudioStreamPlayer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 3.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( -0.8 )
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 5 )
+
+[node name="intro" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="catolicaSc" type="Label" parent="."]
+margin_left = 355.0
+margin_top = 77.0
+margin_right = 653.0
+margin_bottom = 140.0
+custom_colors/font_color = Color( 0, 0.184314, 0.584314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+custom_fonts/font = ExtResource( 6 )
+text = "Católica SC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PacfaseIII2022" type="Label" parent="."]
+margin_left = 394.0
+margin_top = 455.0
+margin_right = 631.0
+margin_bottom = 491.0
+custom_colors/font_color = Color( 0, 0.184314, 0.584314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "Pac fase III 2022. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -146, -73 )
+scale = Vector2( 1.3, 1.3 )
+
+[node name="Prisma" type="Sprite" parent="Sprite"]
+position = Vector2( 509, 315 )
+texture = ExtResource( 1 )
+
+[node name="PartePequena" type="Sprite" parent="Sprite"]
+position = Vector2( 533, 315 )
+texture = ExtResource( 2 )
+
+[node name="ParteGrande" type="Sprite" parent="Sprite"]
+position = Vector2( 528, 315 )
+texture = ExtResource( 3 )
+
+[node name="PartePequena2" type="Sprite" parent="Sprite"]
+position = Vector2( 478, 315 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="ParteGrande2" type="Sprite" parent="Sprite"]
+position = Vector2( 483, 314 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/prisma = SubResource( 2 )
+
+[node name="logoT5n" type="Sprite" parent="."]
+position = Vector2( 443, 330 )
+scale = Vector2( 2.2, 2.2 )
+texture = ExtResource( 8 )
+
+[node name="Top5Nacional" type="Label" parent="."]
+margin_left = 415.0
+margin_top = 330.0
+margin_right = 625.0
+margin_bottom = 378.0
+custom_fonts/font = SubResource( 4 )
+text = "Top5Nacional"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="frase" type="Label" parent="."]
+margin_left = 144.0
+margin_top = 432.0
+margin_right = 893.0
+margin_bottom = 517.0
+custom_fonts/font = SubResource( 5 )
+text = "Style Knight
+Bruno Vinicius Lópes, Gustavo Satig, Noah Stelmak Bussmann,
+Pedro Henrique Steinmacher Engelhardt"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )

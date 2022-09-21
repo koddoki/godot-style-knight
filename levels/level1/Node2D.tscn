@@ -1,0 +1,280 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://assets/door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/level1/Node2D.gd" type="Script" id=3]
+[ext_resource path="res://assets/Console.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/tilesets/premadeTilesets/BasicTiles.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/tilesets/premadeTilesets/NoCollisionTiles.tres" type="TileSet" id=6]
+[ext_resource path="res://assets/fonts/bruteFonts/EightBitDragon-anqx.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/Exit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ux/inlevel/Tutorial.tscn" type="PackedScene" id=9]
+[ext_resource path="res://0x72_DungeonTilesetII_v1.4/frames/floor_ladder.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/premadeFonts/rulesLabel.tres" type="DynamicFont" id=11]
+[ext_resource path="res://assets/monsters/demon/Demon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://levels/level1/PathDemon.gd" type="Script" id=13]
+[ext_resource path="res://ux/botao_transparente.tres" type="StyleBox" id=14]
+[ext_resource path="res://png-transparent-medieval-european-border-background-gradient-color-european-style-complicated.png" type="Texture" id=15]
+[ext_resource path="res://ux/inlevel/SpawnaTutorial.tscn" type="PackedScene" id=16]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 1, 0, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0, 0, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.278431, 0.278431, 1, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Curve2D" id=9]
+bake_interval = 0.01
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 176, 88, 0, 0, 0, 0, 172.317, 128, 0, 0, 0, 0, 12.3169, 128, 0, 0, 0, 0, 12.3169, 224, 0, 0, 0, 0, -147.683, 224, 0, 0, 0, 0, -147.683, 128, 0, 0, 0, 0, -307.683, 128, 0, 0, 0, 0, -307.683, 3.05176e-05, 0, 0, 0, 0, -115.683, 3.05176e-05, 0, 0, 0, 0, -115.683, -96, 0, 0, 0, 0, 12.3169, -96, 0, 0, 0, 0, 12.3169, 32, 0, 0, 0, 0, 172.317, 32 )
+}
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.85098, 0.54902, 0.231373, 0 )
+border_color = Color( 0, 0, 0, 1 )
+corner_detail = 6
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -63.0
+margin_top = -34.0
+margin_right = 1473.0
+margin_bottom = 864.0
+
+[node name="Png-transparent-medieval-european-border-background-gradient-color-european-style-complicated" type="Sprite" parent="ColorRect"]
+position = Vector2( 767, 450 )
+scale = Vector2( 1.66522, 1.72973 )
+texture = ExtResource( 15 )
+
+[node name="floor" type="TileMap" parent="."]
+position = Vector2( 1, 0 )
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+format = 1
+tile_data = PoolIntArray( 0, 14, 0, 1, 14, 0, 2, 14, 0, 3, 14, 0, 4, 14, 0, 5, 14, 0, 6, 14, 0, 7, 14, 0, 8, 14, 0, 9, 14, 0, 10, 14, 0, 11, 14, 0, 12, 14, 0, 13, 14, 0, 14, 14, 0, 15, 14, 0, 65536, 14, 0, 65537, 14, 0, 65538, 14, 0, 65539, 14, 0, 65540, 14, 0, 65541, 14, 0, 65542, 14, 0, 65543, 14, 0, 65544, 14, 0, 65545, 14, 0, 65546, 14, 0, 65547, 14, 0, 65548, 14, 0, 65549, 14, 0, 65550, 14, 0, 65551, 14, 0, 131072, 14, 0, 131073, 14, 0, 131074, 14, 0, 131075, 14, 0, 131076, 14, 0, 131077, 14, 0, 131078, 14, 0, 131079, 14, 0, 131080, 14, 0, 131081, 14, 0, 131082, 14, 0, 131083, 14, 0, 131084, 14, 0, 131085, 14, 0, 131086, 14, 0, 131087, 14, 0, 196608, 14, 0, 196609, 14, 0, 196610, 14, 0, 196611, 14, 0, 196612, 14, 0, 196613, 14, 0, 196614, 14, 0, 196615, 14, 0, 196616, 14, 0, 196617, 14, 0, 196618, 14, 0, 196619, 14, 0, 196620, 14, 0, 196621, 14, 0, 196622, 14, 0, 196623, 14, 0, 262144, 14, 0, 262145, 14, 0, 262146, 14, 0, 262147, 14, 0, 262148, 14, 0, 262149, 14, 0, 262150, 14, 0, 262151, 14, 0, 262152, 14, 0, 262153, 14, 0, 262154, 14, 0, 262155, 14, 0, 262156, 14, 0, 262157, 14, 0, 262158, 14, 0, 262159, 14, 0, 327680, 14, 0, 327681, 14, 0, 327682, 14, 0, 327683, 14, 65537, 327684, 14, 65537, 327685, 14, 0, 327686, 14, 0, 327687, 14, 0, 327688, 14, 0, 327689, 14, 0, 327690, 14, 0, 327691, 14, 0, 327692, 14, 0, 327693, 14, 0, 327694, 14, 0, 327695, 14, 0, 393216, 14, 0, 393217, 14, 0, 393218, 14, 0, 393219, 14, 1, 393220, 14, 65537, 393221, 14, 0, 393222, 14, 0, 393223, 14, 0, 393224, 14, 0, 393225, 14, 0, 393226, 14, 0, 393227, 14, 0, 393228, 14, 0, 393229, 14, 0, 393230, 14, 0, 393231, 14, 0, 458752, 14, 0, 458753, 14, 0, 458754, 14, 65536, 458755, 14, 0, 458756, 14, 0, 458757, 14, 0, 458758, 14, 0, 458759, 14, 131072, 458760, 14, 131073, 458761, 14, 0, 458762, 14, 0, 458763, 14, 0, 458764, 14, 0, 458765, 14, 0, 458766, 14, 0, 458767, 14, 0, 524288, 14, 0, 524289, 14, 0, 524290, 14, 0, 524291, 14, 0, 524292, 14, 1, 524293, 14, 2, 524294, 14, 65538, 524295, 14, 65536, 524296, 14, 0, 524297, 14, 0, 524298, 14, 0, 524299, 14, 0, 524300, 14, 0, 524301, 14, 0, 524302, 14, 0, 524303, 14, 0, 589824, 14, 0, 589825, 14, 0, 589826, 14, 0, 589827, 14, 0, 589828, 14, 0, 589829, 14, 0, 589830, 14, 0, 589831, 14, 0, 589832, 14, 0, 589833, 14, 0, 589834, 14, 0, 589835, 14, 0, 589836, 14, 0, 589837, 14, 0, 589838, 14, 0, 589839, 14, 0, 655360, 14, 0, 655361, 14, 0, 655362, 14, 0, 655363, 14, 0, 655364, 14, 0, 655365, 14, 0, 655366, 14, 0, 655367, 14, 0, 655368, 14, 0, 655369, 14, 0, 655370, 14, 0, 655371, 14, 0, 655372, 14, 0, 655373, 14, 0, 655374, 14, 0, 655375, 14, 0, 720896, 14, 0, 720897, 14, 0, 720898, 14, 0, 720899, 14, 0, 720900, 14, 0, 720901, 14, 0, 720902, 14, 0, 720903, 14, 0, 720904, 14, 0, 720905, 14, 0, 720906, 14, 0, 720907, 14, 0, 720908, 14, 0, 720909, 14, 0, 720910, 14, 0, 720911, 14, 0, 786432, 14, 0, 786433, 14, 0, 786434, 14, 0, 786435, 14, 0, 786436, 14, 0, 786437, 14, 0, 786438, 14, 0, 786439, 14, 0, 786440, 14, 0, 786441, 14, 0, 786442, 14, 0, 786443, 14, 0, 786444, 14, 0, 786445, 14, 0, 786446, 14, 0, 786447, 14, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Wall" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+show_collision = true
+collision_layer = 0
+format = 1
+tile_data = PoolIntArray( -65536, 12, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 13, 0, 0, 6, 0, 15, 7, 0, 65536, 6, 0, 65551, 7, 0, 131072, 6, 0, 131087, 7, 0, 196608, 6, 0, 196610, 12, 0, 196611, 1, 0, 196612, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 13, 0, 196623, 7, 0, 262144, 6, 0, 262146, 16, 0, 262147, 0, 0, 262148, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 15, 0, 262159, 7, 0, 327680, 6, 0, 327682, 6, 0, 327688, 7, 0, 327695, 7, 0, 393216, 6, 0, 393218, 6, 0, 393224, 7, 0, 393231, 7, 0, 458752, 6, 0, 458754, 6, 0, 458760, 7, 0, 458767, 7, 0, 524288, 6, 0, 524290, 6, 0, 524296, 7, 0, 524303, 7, 0, 589824, 6, 0, 589826, 4, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 5, 0, 589839, 7, 0, 655360, 6, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655375, 7, 0, 720896, 6, 0, 720911, 7, 0, 786432, 4, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 5, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallNoCollision" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+format = 1
+tile_data = PoolIntArray( 196613, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="door" parent="." instance=ExtResource( 1 )]
+position = Vector2( 320, 256 )
+
+[node name="Exit" parent="." instance=ExtResource( 8 )]
+position = Vector2( 736, 160 )
+collision_layer = 0
+
+[node name="Sprite" type="Sprite" parent="Exit"]
+modulate = Color( 1, 1, 0, 1 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 350, 392 )
+collision_layer = 32769
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 704, 416 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="Dica" type="PanelContainer" parent="."]
+margin_left = 1064.0
+margin_top = 464.0
+margin_right = 1432.0
+margin_bottom = 773.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Dica"]
+margin_right = 368.0
+margin_bottom = 309.0
+rect_min_size = Vector2( 350, 300 )
+
+[node name="ColorRect" type="ColorRect" parent="Dica/MarginContainer"]
+margin_right = 368.0
+margin_bottom = 309.0
+color = Color( 0.72549, 0.580392, 0.360784, 1 )
+
+[node name="Rules" type="Label" parent="Dica/MarginContainer/ColorRect"]
+margin_right = 368.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 6 )
+text = "LEVEL RULES"
+align = 1
+valign = 1
+
+[node name="Green" type="Panel" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 4.0
+margin_top = 73.0
+margin_right = 44.0
+margin_bottom = 113.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Dica/MarginContainer/ColorRect/Green"]
+margin_left = 63.0
+margin_top = 1.0
+margin_right = 258.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 11 )
+text = "GREEN: OPEN PASSAGES"
+align = 1
+valign = 1
+
+[node name="Red" type="Panel" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 4.0
+margin_top = 137.0
+margin_right = 44.0
+margin_bottom = 177.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" type="Label" parent="Dica/MarginContainer/ColorRect/Red"]
+margin_left = 63.0
+margin_top = 1.0
+margin_right = 266.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 11 )
+text = "RED: CLOSE PASSAGES"
+align = 1
+valign = 1
+
+[node name="Blue" type="Panel" parent="Dica/MarginContainer/ColorRect"]
+margin_left = 5.0
+margin_top = 201.0
+margin_right = 45.0
+margin_bottom = 241.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Commands" type="Label" parent="Dica/MarginContainer/ColorRect/Blue"]
+margin_left = 64.0
+margin_right = 339.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 11 )
+text = "RUNNING COMMANDS:
+.door {color:red;}
+.exit {color:yellow;}"
+
+[node name="demon" type="Path2D" parent="."]
+visible = false
+position = Vector2( 704, 493 )
+curve = SubResource( 9 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Node2D" parent="demon"]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="demon"]
+position = Vector2( 176, 88 )
+rotate = false
+cubic_interp = false
+
+[node name="Demon" parent="demon/PathFollow2D" instance=ExtResource( 12 )]
+position = Vector2( 0, 0 )
+z_as_relative = false
+collision_layer = 2048
+
+[node name="DesclicaConsole" type="Button" parent="."]
+margin_right = 1024.0
+margin_bottom = 824.0
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/focus = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 14 )
+custom_styles/normal = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Console" parent="." instance=ExtResource( 4 )]
+
+[node name="HomeButton" type="Button" parent="."]
+margin_left = 1066.0
+margin_top = 829.0
+margin_right = 1432.0
+margin_bottom = 861.0
+rect_pivot_offset = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.46
+custom_colors/font_color_disabled = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_focus = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color = Color( 0.411765, 0.243137, 0.0705882, 1 )
+custom_colors/font_color_hover = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.592157, 0.352941, 0.109804, 1 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/focus = ExtResource( 14 )
+custom_styles/normal = SubResource( 11 )
+text = "Voltar"
+
+[node name="SpawnaTutorial" parent="." instance=ExtResource( 16 )]
+margin_left = 1008.0
+margin_top = 798.0
+margin_right = 1480.0
+margin_bottom = 818.0
+
+[node name="Tutorial" parent="." instance=ExtResource( 9 )]
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_Exit_body_entered"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
